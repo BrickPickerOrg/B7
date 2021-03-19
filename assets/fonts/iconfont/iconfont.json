@@ -1,0 +1,226 @@
+{
+  "id": "1989956",
+  "name": "B726",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16893030",
+      "name": "下载",
+      "font_class": "xiazai1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "14492056",
+      "name": "音量",
+      "font_class": "yinliang",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "17512268",
+      "name": "heart-2-line",
+      "font_class": "heart-2-line",
+      "unicode": "e86e",
+      "unicode_decimal": 59502
+    },
+    {
+      "icon_id": "17512278",
+      "name": "heart-2-fill",
+      "font_class": "heart-2-fill",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "12811808",
+      "name": "精选",
+      "font_class": "jingxuan1",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "17455700",
+      "name": "精 选",
+      "font_class": "jingxuan",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11911647",
+      "name": "耳机",
+      "font_class": "tianchongxing-",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "14999",
+      "name": "菱形",
+      "font_class": "lingxing",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "10562545",
+      "name": "Player, play",
+      "font_class": "Playerplay",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "10562546",
+      "name": "Player, next",
+      "font_class": "Playernext",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "10562548",
+      "name": "Player, pause",
+      "font_class": "Playerpause",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "17579260",
+      "name": "Player, next",
+      "font_class": "Playernext-copy",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "248926",
+      "name": "right",
+      "font_class": "right",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "248927",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "7712701",
+      "name": "play",
+      "font_class": "play1",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "10997775",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "12036456",
+      "name": "循环07",
+      "font_class": "repeat-line",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "12036466",
+      "name": "循环02",
+      "font_class": "repeat-one-line",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "588421",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "5344791",
+      "name": "San Mi App outline i",
+      "font_class": "song-list",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "9785706",
+      "name": "pause-circle",
+      "font_class": "pause",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "11488294",
+      "name": "play-fill",
+      "font_class": "play",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "15262786",
+      "name": "1_music82",
+      "font_class": "next",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "15262807",
+      "name": "1_music83",
+      "font_class": "prev",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "16035271",
+      "name": "disc-line",
+      "font_class": "disc-line",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "16035276",
+      "name": "equalizer-fill",
+      "font_class": "equalizer-fill",
+      "unicode": "e6d3",
+      "unicode_decimal": 59091
+    },
+    {
+      "icon_id": "16035295",
+      "name": "hq-line",
+      "font_class": "hq-line",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "16035297",
+      "name": "hd-line",
+      "font_class": "hd-line",
+      "unicode": "e6d7",
+      "unicode_decimal": 59095
+    },
+    {
+      "icon_id": "16035378",
+      "name": "sound-module-line",
+      "font_class": "sound-module-line",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "16035382",
+      "name": "stop-mini-fill",
+      "font_class": "stop-mini-fill",
+      "unicode": "e6ef",
+      "unicode_decimal": 59119
+    },
+    {
+      "icon_id": "16360981",
+      "name": "voiceprint-fill",
+      "font_class": "voiceprint-fill-copy",
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
+    }
+  ]
+}

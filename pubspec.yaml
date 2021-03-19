@@ -1,0 +1,32 @@
+name: B7
+description: migu audio player
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^3.0.9
+  provider: ^4.3.1
+  path_provider: ^1.6.24
+  audioplayers: ^0.17.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: '^0.7.3'
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: IconFont
+      fonts:
+        - asset: assets/fonts/iconfont/iconfont.ttf
+flutter_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icon/icon.png'
+  # flutter pub run flutter_launcher_icons:main
+        
