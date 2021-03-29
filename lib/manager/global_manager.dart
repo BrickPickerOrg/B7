@@ -1,5 +1,7 @@
+import 'package:B7/global.dart';
 import 'package:B7/service/api.dart';
 import 'package:B7/utils/player_utils.dart';
+import 'package:B7/utils/utils.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,12 @@ class GlobalManager with ChangeNotifier {
 
   // 咪咕音乐音频实例
   MiguAudio miguAudio = MiguAudio();
+
+  // 播放器背景字体色
+  Map<String, Color> generator = {
+    'dominantColor': Global.backgroundColor,
+    'vibrantColor': Global.fontColor,
+  };
 
   var homeData; //首页数据
 
@@ -93,6 +101,7 @@ class GlobalManager with ChangeNotifier {
     // audioPlayer.setPlaybackRate(playbackRate: 1.0);
     if (res == 1) {
       complete = true;
+      getMainColors(NetworkImage(miguAudio.audioCoverUrl));
       notifyListeners();
     }
   }
@@ -165,5 +174,11 @@ class GlobalManager with ChangeNotifier {
       currentlycText = _lycText != null ? _lycText : currentlycText;
       notifyListeners();
     });
+  }
+
+  // 获取专辑主题色
+  Future<void> getMainColors(image) async {
+    generator = await Utils.getMainColors(image);
+    notifyListeners();
   }
 }

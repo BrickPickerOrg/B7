@@ -1,5 +1,7 @@
 import 'package:B7/iconfont.dart';
+import 'package:B7/manager/global_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PlayerController extends StatefulWidget {
   PlayerController({Key key}) : super(key: key);
@@ -36,12 +38,21 @@ class ControllerItem extends StatefulWidget {
 class _ControllerItemState extends State<ControllerItem> {
   @override
   Widget build(BuildContext context) {
+    GlobalManager globalManager = Provider.of<GlobalManager>(context);
+    Color dominantColor = globalManager.generator['dominantColor'];
+    Color vibrantColor = globalManager.generator['vibrantColor'];
+    Color vibrantColorOpacity =
+        globalManager.generator['vibrantColor'].withOpacity(.5);
     return Expanded(
       child: InkWell(
         onTap: widget.onTap,
         child: Container(
           child: Center(
-            child: Icon(widget.icon, size: 27),
+            child: Icon(
+              widget.icon,
+              size: 27,
+              color: vibrantColor,
+            ),
           ),
         ),
       ),
