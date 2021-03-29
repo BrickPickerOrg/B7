@@ -26,8 +26,8 @@ class _PlaylistItemState extends State<PlaylistItem> {
         );
       },
       child: Container(
-        width: 100,
-        height: 100,
+        width: 130,
+        height: 130,
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -50,7 +50,7 @@ class _PlaylistItemState extends State<PlaylistItem> {
                   child: Opacity(
                     opacity: .2,
                     child: Container(
-                      width: 90,
+                      width: 120,
                       padding: EdgeInsets.all(3),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade200,
@@ -59,8 +59,9 @@ class _PlaylistItemState extends State<PlaylistItem> {
                         widget.name,
                         style: TextStyle(
                           color: Global.fontColor,
-                          fontSize: 10,
+                          fontSize: 13,
                           fontWeight: FontWeight.w400,
+                          fontFamily: 'HuiPianYuan',
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -77,15 +78,16 @@ class _PlaylistItemState extends State<PlaylistItem> {
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(5)),
                 child: Container(
-                  width: 90,
+                  width: 120,
                   padding: EdgeInsets.all(3),
                   decoration: BoxDecoration(color: Colors.transparent),
                   child: Text(
                     widget.name,
                     style: TextStyle(
                       color: Global.fontColor,
-                      fontSize: 10,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
+                      fontFamily: 'HuiPianYuan',
                     ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,

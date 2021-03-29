@@ -1,10 +1,9 @@
 import 'package:B7/global.dart';
-import 'package:B7/iconfont.dart';
 import 'package:B7/manager/global_manager.dart';
+import 'package:B7/screen/player/bottom_player.dart';
 import 'package:B7/screen/search/search_page.dart';
 import 'package:B7/widgets/loading.dart';
 import 'package:B7/screen/playlist/playlist_item.dart';
-import 'package:B7/widgets/rect_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -49,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                     globalManager.homeData != null
                         ? Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 120,
+                            height: 150,
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
@@ -58,12 +57,12 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           )
-                        : PageLoading(),
+                        : LineScalePulseOutIndicator(),
                   ],
                 ),
               ),
             ),
-            HomePlayer(),
+            BottomPlayer(),
           ],
         ),
       ),
@@ -115,133 +114,14 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
                 '歌曲、歌手搜索',
                 style: TextStyle(
                   color: Global.fontSecondColor,
-                  fontSize: 12,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'HuiPianYuan',
                 ),
               )
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-// 首页底部播放器
-class HomePlayer extends StatefulWidget {
-  HomePlayer({Key key}) : super(key: key);
-  @override
-  _HomePlayerState createState() => _HomePlayerState();
-}
-
-class _HomePlayerState extends State<HomePlayer> {
-  @override
-  Widget build(BuildContext context) {
-    GlobalManager globalManager = Provider.of<GlobalManager>(context);
-    // 专辑封面
-    String cover = globalManager.miguAudio.audioCoverUrl;
-    // 音频当前播放进度
-    String positionText = globalManager.positionText;
-    // 音频总时长
-    String durationText = globalManager.durationText;
-    return Container(
-      padding: EdgeInsets.fromLTRB(15, 10, 15, 5),
-      decoration: BoxDecoration(
-        color: Global.backgroundColor,
-        border: Border(
-          top: BorderSide(
-            color: Global.fontSecondColor.withOpacity(.1),
-            width: .5,
-          ),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(50)),
-            ),
-            child: Stack(
-              children: [
-                RectImage(
-                  width: 50,
-                  url: cover,
-                  radius: 10,
-                ),
-                Positioned(
-                  child: Offstage(
-                    offstage: globalManager.miguAudio.audioUrl == '',
-                    child: InkWell(
-                      onTap: () {
-                        globalManager.complete
-                            ? globalManager.pause()
-                            : globalManager.play();
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Global.backgroundColor.withOpacity(.6),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            globalManager.complete
-                                ? Icons.pause
-                                : Icons.play_arrow,
-                            size: 34,
-                            color: Global.fontColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(width: 5),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  globalManager.miguAudio.audioName,
-                  style: TextStyle(
-                    color: Global.fontColor,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 3),
-                Text(
-                  globalManager.currentlycText,
-                  style: TextStyle(
-                    color: Global.fontSecondColor,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: 4),
-                Text(
-                  positionText + '/' + durationText,
-                  style: TextStyle(
-                    color: Global.fontSecondColor.withOpacity(.7),
-                    fontSize: 9,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(width: 10),
-          Icon(IconFont.song_list, color: Global.fontColor)
-        ],
       ),
     );
   }

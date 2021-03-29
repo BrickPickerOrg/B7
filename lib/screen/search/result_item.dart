@@ -46,14 +46,14 @@ class _ResultItemState extends State<ResultItem> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
         decoration: BoxDecoration(
           color: Global.backgroundColor,
         ),
         child: Row(
           children: [
             RectImage(
-              width: 30,
+              width: 35,
               url: widget.cover,
               radius: 6,
             ),
@@ -69,6 +69,7 @@ class _ResultItemState extends State<ResultItem> {
                       color: Global.fontColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
+                      fontFamily: 'HuiPianYuan',
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -79,6 +80,7 @@ class _ResultItemState extends State<ResultItem> {
                       color: Global.fontSecondColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
+                      fontFamily: 'HuiPianYuan',
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

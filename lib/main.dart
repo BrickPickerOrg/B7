@@ -1,5 +1,6 @@
 import 'package:B7/manager/global_manager.dart';
 import 'package:B7/screen/home.dart';
+import 'package:B7/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,8 @@ void main() {
       ],
     ),
   );
+
+  Utils.setAndroidOverlayStyle(Colors.transparent, Brightness.light);
 }
 
 class MyApp extends StatelessWidget {

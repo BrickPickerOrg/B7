@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "18963668",
+      "name": "随机播放",
+      "font_class": "suijibofang",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "18963837",
+      "name": "顺序播放",
+      "font_class": "shunxubofang",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "18965480",
+      "name": "单曲循环",
+      "font_class": "danquxunhuan",
+      "unicode": "e6a2",
+      "unicode_decimal": 59042
+    },
+    {
+      "icon_id": "18965481",
+      "name": "列表循环",
+      "font_class": "liebiaoxunhuan",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "18993579",
+      "name": "下",
+      "font_class": "xia",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
       "icon_id": "16893030",
       "name": "下载",
       "font_class": "xiazai1",
@@ -34,62 +69,6 @@
       "unicode_decimal": 59503
     },
     {
-      "icon_id": "12811808",
-      "name": "精选",
-      "font_class": "jingxuan1",
-      "unicode": "e672",
-      "unicode_decimal": 58994
-    },
-    {
-      "icon_id": "17455700",
-      "name": "精 选",
-      "font_class": "jingxuan",
-      "unicode": "e614",
-      "unicode_decimal": 58900
-    },
-    {
-      "icon_id": "11911647",
-      "name": "耳机",
-      "font_class": "tianchongxing-",
-      "unicode": "e605",
-      "unicode_decimal": 58885
-    },
-    {
-      "icon_id": "14999",
-      "name": "菱形",
-      "font_class": "lingxing",
-      "unicode": "e613",
-      "unicode_decimal": 58899
-    },
-    {
-      "icon_id": "10562545",
-      "name": "Player, play",
-      "font_class": "Playerplay",
-      "unicode": "e6b0",
-      "unicode_decimal": 59056
-    },
-    {
-      "icon_id": "10562546",
-      "name": "Player, next",
-      "font_class": "Playernext",
-      "unicode": "e6b1",
-      "unicode_decimal": 59057
-    },
-    {
-      "icon_id": "10562548",
-      "name": "Player, pause",
-      "font_class": "Playerpause",
-      "unicode": "e6b2",
-      "unicode_decimal": 59058
-    },
-    {
-      "icon_id": "17579260",
-      "name": "Player, next",
-      "font_class": "Playernext-copy",
-      "unicode": "e789",
-      "unicode_decimal": 59273
-    },
-    {
       "icon_id": "248926",
       "name": "right",
       "font_class": "right",
@@ -116,20 +95,6 @@
       "font_class": "search",
       "unicode": "e699",
       "unicode_decimal": 59033
-    },
-    {
-      "icon_id": "12036456",
-      "name": "循环07",
-      "font_class": "repeat-line",
-      "unicode": "e610",
-      "unicode_decimal": 58896
-    },
-    {
-      "icon_id": "12036466",
-      "name": "循环02",
-      "font_class": "repeat-one-line",
-      "unicode": "e611",
-      "unicode_decimal": 58897
     },
     {
       "icon_id": "588421",
@@ -200,20 +165,6 @@
       "font_class": "hd-line",
       "unicode": "e6d7",
       "unicode_decimal": 59095
-    },
-    {
-      "icon_id": "16035378",
-      "name": "sound-module-line",
-      "font_class": "sound-module-line",
-      "unicode": "e6ed",
-      "unicode_decimal": 59117
-    },
-    {
-      "icon_id": "16035382",
-      "name": "stop-mini-fill",
-      "font_class": "stop-mini-fill",
-      "unicode": "e6ef",
-      "unicode_decimal": 59119
     },
     {
       "icon_id": "16360981",

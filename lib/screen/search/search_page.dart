@@ -96,7 +96,7 @@ class _SearchPageState extends State<SearchPage> {
                       opacity: loading ? 1 : 0,
                       child: Container(
                         padding: EdgeInsets.fromLTRB(
-                            10, 10, 10, Global.media.bottom),
+                            10, 10, 10, Global.media.bottom + 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -118,6 +118,7 @@ class _SearchPageState extends State<SearchPage> {
                                 color: Global.fontSecondColor.withOpacity(.5),
                                 fontWeight: FontWeight.w500,
                                 fontSize: 13,
+                                fontFamily: 'HuiPianYuan',
                               ),
                             )
                           ],
@@ -188,6 +189,7 @@ class _SearchHeaderBarState extends State<SearchHeaderBar> {
                         hintText: "歌曲、歌手搜索",
                         hintStyle: TextStyle(
                           color: Global.fontSecondColor,
+                          fontFamily: 'HuiPianYuan',
                           fontSize: 12,
                         ),
                       ),
@@ -208,6 +210,7 @@ class _SearchHeaderBarState extends State<SearchHeaderBar> {
               style: TextStyle(
                 color: Global.fontColor,
                 fontWeight: FontWeight.w500,
+                fontFamily: 'HuiPianYuan',
                 fontSize: 14,
               ),
             ),

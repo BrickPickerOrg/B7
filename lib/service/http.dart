@@ -3,8 +3,8 @@ import 'dart:async';
 
 class HttpUtils {
   static Dio dio;
-  // static const String API_PREFIX = 'http://bknds.jiajiale.site/migu';
-  static const String API_PREFIX = 'http://localhost:3030/migu';
+  static const String API_PREFIX = 'http://bknds.jiajiale.site/migu';
+  // static const String API_PREFIX = 'http://localhost:3030/migu';
   static const int CONNECT_TIMEOUT = 10000;
   static const int RECEIVE_TIMEOUT = 3000;
 

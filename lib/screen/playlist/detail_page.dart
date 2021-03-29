@@ -1,5 +1,6 @@
 import 'package:B7/global.dart';
 import 'package:B7/manager/global_manager.dart';
+import 'package:B7/screen/player/bottom_player.dart';
 import 'package:B7/service/api.dart';
 import 'package:B7/utils/player_utils.dart';
 import 'package:B7/widgets/loading.dart';
@@ -44,6 +45,7 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
         cover: item['cover'],
         songName: item['songName'],
         singers: item['singers'],
+        album: item['album'],
       ));
     }
     return list;
@@ -58,7 +60,7 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
           decoration: BoxDecoration(
             color: Global.backgroundColor,
           ),
-          padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
           child: Column(
             children: [
               Container(
@@ -83,7 +85,13 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
               Expanded(
                 child: SingleChildScrollView(
                   child: _playlistDetailInfo == null
-                      ? PageLoading()
+                      ? Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height - 100,
+                          child: Center(
+                            child: LineScalePulseOutIndicator(),
+                          ),
+                        )
                       : Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,6 +122,7 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
                                             color: Global.fontColor,
                                             fontSize: 21,
                                             fontWeight: FontWeight.w600,
+                                            fontFamily: 'HuiPianYuan',
                                           ),
                                         ),
                                         SizedBox(height: 5),
@@ -123,6 +132,7 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
                                             color: Global.fontSecondColor,
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400,
+                                            fontFamily: 'HuiPianYuan',
                                           ),
                                         ),
                                       ],
@@ -140,6 +150,7 @@ class _PlaylistDetailPageState extends State<PlaylistDetailPage> {
                                   color: Global.fontColor,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,
+                                  fontFamily: 'HuiPianYuan',
                                 ),
                               ),
                             ),
@@ -166,12 +177,14 @@ class MusicItem extends StatefulWidget {
     this.cover,
     this.songName,
     this.singers,
+    this.album,
   }) : super(key: key);
   final String id;
   final String cid;
   final String cover;
   final String songName;
   final List singers;
+  final Map album;
 
   @override
   _MusicItemState createState() => _MusicItemState();
@@ -186,69 +199,85 @@ class _MusicItemState extends State<MusicItem> {
   @override
   Widget build(BuildContext context) {
     GlobalManager globalManager = Provider.of<GlobalManager>(context);
-    return InkWell(
-      onTap: () async {
-        globalManager.setAudioInfo(
-          miguId: widget.id,
-          cid: widget.cid,
-          audioName: widget.songName,
-          albumName: '',
-          audioCoverUrl: widget.cover,
-          singers: widget.singers,
-        );
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-        child: Row(
-          children: [
-            RectImage(
-              width: 50,
-              url: widget.cover,
-              radius: 6,
-            ),
-            SizedBox(width: 15),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+    return globalManager.miguAudio.miguId == widget.id
+        ? BottomPlayer()
+        : InkWell(
+            onTap: () async {
+              globalManager.setAudioInfo(
+                miguId: widget.id,
+                cid: widget.cid,
+                audioName: widget.songName,
+                albumName: '',
+                audioCoverUrl: widget.cover,
+                singers: widget.singers,
+              );
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+              child: Row(
                 children: [
-                  Text(
-                    widget.songName,
-                    style: TextStyle(
-                      color: Global.fontColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  RectImage(
+                    width: 50,
+                    url: widget.cover,
+                    radius: 6,
                   ),
-                  Text(
-                    PlayerUtils.formatSingersName(widget.singers),
-                    style: TextStyle(
-                      color: Global.fontSecondColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.songName,
+                          style: TextStyle(
+                            color: Global.fontColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'HuiPianYuan',
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 3),
+                        Text(
+                          "专辑：《${widget.album == null ? widget.songName : widget.album['name']}》",
+                          style: TextStyle(
+                            color: Global.fontSecondColor,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'HuiPianYuan',
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          "歌手：${PlayerUtils.formatSingersName(widget.singers)}",
+                          style: TextStyle(
+                            color: Global.fontSecondColor,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'HuiPianYuan',
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
+                  SizedBox(width: 15),
+                  InkWell(
+                    child: Container(
+                      child: Icon(
+                        Icons.more_horiz,
+                        color: Global.fontSecondColor,
+                        size: 18,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
-            SizedBox(width: 15),
-            InkWell(
-              child: Container(
-                child: Icon(
-                  Icons.more_horiz,
-                  color: Global.fontSecondColor,
-                  size: 18,
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+          );
   }
 }
